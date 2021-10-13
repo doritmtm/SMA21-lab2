@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.helloandroid3.dialogs.HelloDialog;
+
 public class MainActivity extends AppCompatActivity {
     private EditText eName;
     private Button bName,bRandom;
@@ -23,13 +25,18 @@ public class MainActivity extends AppCompatActivity {
     }
     public void clicked(View view)
     {
+        HelloDialog helloDialog;
         switch(view.getId())
         {
             case R.id.bName:
                 tName.setText("Hello, "+eName.getText());
+                helloDialog=new HelloDialog();
+                helloDialog.show(getSupportFragmentManager(),"mock");
                 break;
             case R.id.bRandom:
                 tName.setText("Hello, Random");
+                helloDialog=new HelloDialog();
+                helloDialog.show(getSupportFragmentManager(),"mock");
                 break;
         }
     }
