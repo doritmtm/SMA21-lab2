@@ -9,10 +9,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
 public class HelloDialog extends DialogFragment {
+    public String message;
+    public HelloDialog(String message)
+    {
+        this.message=message;
+    }
     public Dialog onCreateDialog(Bundle savedInstanceState)
     {
         AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());
-        builder.setMessage("MOCK")
+        builder.setMessage(message)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
